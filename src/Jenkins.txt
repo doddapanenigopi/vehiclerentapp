@@ -1,0 +1,15 @@
+node(){
+
+stage("Git checkout"){
+checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '92d7b2ea-f4ea-49ef-b2b2-93a531b1cf5a', url: 'https://github.com/doddapanenigopi/vehiclerentapp.git']])
+
+
+}
+
+stage("Maven Build"){
+    sh "mvn package"
+
+}
+
+
+}
